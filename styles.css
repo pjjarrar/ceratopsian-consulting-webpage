@@ -67,6 +67,22 @@ nav.scrolled {
     padding: 0 1rem;
 }
 
+/* Add these styles for the active nav link */
+.nav-links li a.active {
+    color: #fff;
+    position: relative;
+}
+
+.nav-links li a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 1rem;
+    right: 1rem;
+    height: 2px;
+    background: white;
+}
+
 /* Hero Section */
 .hero {
     height: 800px;
