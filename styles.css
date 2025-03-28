@@ -177,6 +177,7 @@ nav.scrolled {
     margin-bottom: 1.5rem;
     position: relative;
     padding-bottom: 15px;
+    text-align: center;
 }
 
 .text-content h2::after {
