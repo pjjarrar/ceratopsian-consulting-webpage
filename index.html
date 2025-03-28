@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ceratopsian Consulting</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <img src="assets/ceratopsian-logo2.png" alt="Ceratopsian Logo">
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">Who We Are</a></li>
+            <li><a href="#value">Our Services</a></li>
+            <li><a href="#focus-area">Our Focus Areas</a></li>
+            <li><a href="#value">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Ceratopsian Consulting</h1>
+            <img class="hero-logo" src="assets/ceratopsian-logo2.png" alt="Ceratopsian Logo">
+            <a href="#contact"><button class="hero-btn">More information</button></a>
+        </div>
+        <a href="#about" class="scroll-arrow">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- Content Sections -->
+    <section class="content-section" id="about">
+        <div class="container">
+            <div class="text-content">
+                <h2>Who we are?</h2>
+                <p>At Ceratopsian Consulting, we are a fresh, new, yet dedicated Geographic Information Systems (GIS) consultant company passionate about helping businesses and organizations 
+                    unlock the power of geographic information systems. As a small yet focused operation, we bring a personalized approach, ensuring every project receives the highest level 
+                    of attention and care. From geospatial analysis to custom mapping solutions, we tailor our services to meet your unique needs and challenges. <a href="#about">more info</a></p>
+                
+            </div>
+            <img class="image-placeholder" src="assets/whoweare.png" alt="Who we are">
+        </div>
+    </section>
+
+    <section class="content-section reverse" id="value">
+        <div class="container">
+            <div class="text-content">
+                <h2>How we provide value?</h2>
+                <p>At Ceratopsian Consulting, we specialize in delivering tailored GIS solutions that drive results. As an independent GIS consultant company, our hands-on approach 
+                    ensures every client receives personalized attention and innovative solutions that meet their unique challenges. <a href="#value-two">Here's how we provide exceptional value</a></p>
+            </div>
+            <img class="image-placeholder" src="assets/value.png" alt="How we provide value">
+        </div>
+    </section>
+
+    <!-- After the second content section and before the third one -->
+    <section class="points-section" id="value-two">
+        <div class="points-container">
+            <div class="point-box">
+                <i class="fas fa-map-marked-alt"></i>
+                <h3>Customized Solutions</h3>
+                <p>We focus on creating GIS strategies and tools specific to your industry to help you gain actionable insights and achieve your goals.</p>
+            </div>
+            <div class="point-box">
+                <i class="fas fa-dollar-sign"></i>
+                <h3>Cost Efficiency</h3>
+                <p>As a smaller operation, we offer affordable services without compromising quality, making GIS accessible to businesses of all sizes.</p>
+            </div>
+            <div class="point-box">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Expert Guidance</h3>
+                <p>With our knowledge of GIS technologies, we simplify complex data, empowering you to make informed decisions and optimize workflows.</p>
+            </div>
+            <div class="point-box">
+                <i class="fas fa-comments"></i>
+                <h3>Direct Communication</h3>
+                <p>You'll work directly with your assigned consultant, ensuring streamlined communication and a clear understanding of your objectives.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section" id="focus-area">
+        <div class="container column">
+            <div class="text-content focus-text">
+                <h2>Our Focus Areas</h2>
+                <p>"As owner of Ceratopsian Consulting, I believe it is important to show specific examples of the value my company brings. I take pride in
+                     delivering impactful GIS solutions that truly make a difference. From customized mapping projects to data-driven geospatial analytics, 
+                     this past work spans a variety of industries. Each project reflects the commitment of Ceratopsian Consulting to innovation, precision, and meeting clients' 
+                     specific needs. It is my hope that these successful GIS projects inspire confidence in the results my company can achieve for you."
+                </p>
+                <p class="focus-text-name">- Brandon Richardson (Owner of Ceratopsian Consulting)</p>
+            </div>
+            <div class="carousel-container">
+                <div class="carousel">
+                    <div class="carousel-slide">
+                        <img src="assets/carousel-1.png" alt="Focus Area 1">
+                    </div>
+                    <!-- <div class="carousel-slide">
+                        <img src="image2.jpg" alt="Focus Area 2">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="image3.jpg" alt="Focus Area 3">
+                    </div> -->
+                </div>
+                <button class="carousel-button prev">&#10094;</button>
+                <button class="carousel-button next">&#10095;</button>
+                <div class="carousel-dots"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form>
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p>&copy; 2025 Ceratopsian Consulting LLC. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
