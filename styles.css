@@ -158,7 +158,7 @@ nav.scrolled {
     bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
-    color: steelblue;
+    color: white;
     font-size: 2rem;
     cursor: pointer;
     animation: bounce 2s infinite;
