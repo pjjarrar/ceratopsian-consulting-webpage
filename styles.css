@@ -38,8 +38,9 @@ nav.scrolled {
 }
 
 .logo img {
-    height: 40px;  /* Adjust this value to match your desired logo height */
-    width: auto;   /* This maintains the aspect ratio */
+    height: 65px;  /* Increased from 50px */
+    width: auto;
+    margin: -8px 0;  /* Added negative margin to compensate for larger size */
 }
 
 .hamburger {
@@ -87,6 +88,9 @@ nav.scrolled {
 .hero {
     height: 800px;
     background: #f0f0f0;
+    background-image: url('assets/hero-image.png');
+    background-size: cover;
+    background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -94,16 +98,32 @@ nav.scrolled {
     position: relative;
 }
 
-.hero-content h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+/* Add a dark overlay */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);  /* Adjust opacity as needed */
 }
 
+/* Update hero content to ensure it's above the overlay */
 .hero-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;  /* This ensures content stays above overlay */
+    z-index: 1;         /* This ensures content stays above overlay */
+}
+
+.hero-content h1 {
+    color: white;
+    font-size: 3.5rem;  /* Slightly larger */
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);  /* Add subtle text shadow */
 }
 
 .hero-logo {
@@ -117,17 +137,20 @@ nav.scrolled {
     margin-top: 2rem;
     background-color: steelblue;
     color: white;
-    padding: 1rem 2rem;
+    padding: 1.2rem 2.5rem;  /* Slightly larger padding */
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
     font-size: 1.1rem;
     font-weight: 500;
     border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);  /* Add subtle shadow */
 }
 
 .hero-btn:hover {
     background-color: #2d5a7f;
+    transform: translateY(-2px);  /* Add slight lift effect */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);  /* Enhance shadow on hover */
 }
 
 .scroll-arrow {
