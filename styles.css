@@ -40,7 +40,7 @@ nav.scrolled {
 .logo img {
     height: 50px;  /* Increased from 50px */
     width: auto;
-    margin: -8px 0;  /* Added negative margin to compensate for larger size */
+    margin: -4px 0;  /* Added negative margin to compensate for larger size */
 }
 
 .hamburger {
@@ -183,9 +183,22 @@ nav.scrolled {
 
 /* Content Sections - Enhanced Design */
 .content-section {
-    padding: 7rem 2rem;  /* Increased padding */
+    padding: 7rem 2rem;
     position: relative;
     overflow: hidden;
+}
+
+/* Add subtle background pattern to non-reverse sections */
+.content-section:not(.reverse)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 48%, rgba(70, 130, 180, 0.03) 50%, transparent 52%);
+    background-size: 20px 20px;
+    z-index: 1;
 }
 
 .container {
@@ -200,34 +213,52 @@ nav.scrolled {
 
 .text-content {
     flex: 1;
-    padding: 2rem;
+    padding: 2.5rem;
     background: rgba(255, 255, 255, 0.95);
     border-radius: 12px;
     box-shadow: 0 6px 25px rgba(0, 0, 0, 0.07);
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Left accent border for regular sections */
+.text-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: steelblue;
+    border-radius: 4px 0 0 4px;
+}
+
+/* Right accent border for "How We Provide Value" section */
+.reverse .text-content::before {
+    left: auto;
+    right: 0;
+    border-radius: 0 4px 4px 0;
 }
 
 .text-content:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
 }
 
 .text-content h2 {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     margin-bottom: 1.5rem;
     position: relative;
     padding-bottom: 15px;
     text-align: center;
+    color: steelblue;
 }
 
-.text-content h2::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
-    background: steelblue;
+/* Style key phrases or words */
+.text-content p strong {
+    color: steelblue;
+    font-weight: 600;
 }
 
 .text-content p {
@@ -270,13 +301,14 @@ nav.scrolled {
     background: #ddd;
     border-radius: 12px;
     box-shadow: 0 6px 25px rgba(0, 0, 0, 0.07);
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    transform: perspective(1000px) rotateY(0deg);
 }
 
 .image-placeholder:hover {
-    transform: translateY(-5px);
+    transform: perspective(1000px) rotateY(2deg) translateY(-5px);
 }
 
 .reverse .container {
@@ -285,33 +317,43 @@ nav.scrolled {
 
 /* Add this new style for the reverse section */
 .content-section.reverse {
-    background-color: #f5f5f5; /* Keep just the background color */
+    background-color: #f5f5f5;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Add subtle animation to reverse sections */
+.content-section.reverse::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, transparent 48%, rgba(70, 130, 180, 0.03) 50%, transparent 52%);
+    background-size: 20px 20px;
+    z-index: 1;
 }
 
 /* Contact Form - Complete Reset and New Layout */
 .contact {
     padding: 7rem 2rem;
     background: #f9f9f9;
-    display: flex;
-    flex-direction: column;  /* Stack children vertically */
-    align-items: center;     /* Center children horizontally */
 }
 
 .contact .container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;  /* This ensures title is above form */
-    align-items: stretch;    /* This makes the form take full width */
     gap: 3rem;
 }
 
 .contact h2 {
     text-align: center;
     font-size: 2.5rem;
-    color: #333;
-    width: 100%;            /* Full width */
+    color: steelblue;
+    width: 100%;
+    margin-bottom: 2rem;
 }
 
 form {
@@ -363,7 +405,7 @@ form button:active {
 /* Footer */
 footer {
     padding: 2rem;
-    background: #333;
+    background: #103449;
     color: white;
     text-align: center;
 }
@@ -572,4 +614,92 @@ footer {
 
 .dot.active {
     background: white;
+}
+
+/* Contact section updates */
+.contact-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Form takes 2/3, info takes 1/3 */
+    gap: 2rem;
+    align-items: start;
+}
+
+.contact-form-wrapper {
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.07);
+}
+
+.contact-info {
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.07);
+}
+
+.contact-image {
+    margin: 2rem 0;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.contact-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contact-item i {
+    color: steelblue;
+    font-size: 1.2rem;
+}
+
+.contact-item p {
+    margin: 0;
+    color: #555;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Add this after your existing .text-content::before rule */
+.focus-text::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 100%;
+    background: steelblue;
+    border-radius: 0 4px 4px 0;
+}
+
+/* Add this after your .text-content h2 styles */
+.section-icon {
+    text-align: center;
+    margin: 0 0 1rem 0;
+}
+
+.section-icon i {
+    font-size: 2rem;
+    color: steelblue;
 }

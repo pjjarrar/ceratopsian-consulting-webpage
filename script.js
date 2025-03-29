@@ -96,7 +96,7 @@ document.querySelector('.scroll-arrow').addEventListener('click', function(e) {
     aboutSection.scrollIntoView({ behavior: 'smooth' });
 });
 
-// Add this to your existing JavaScript
+// code for the nav bar highlight
 document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-links a');
